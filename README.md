@@ -7,7 +7,10 @@ github에서 static website publish 방법
 
 github free publish update 방법
 
-1. default branch에서 code 수정 \*\*\*중요
+1. main branch에서 code 수정 \*\*\*중요
+2. main branch commit and push
+3. gh-pages branch 이동
+4. branch(상단bar) - update from main
 
 This is vanilla j.s course for biginner
 variable.length : string 길이 구하기
