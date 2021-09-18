@@ -1,5 +1,15 @@
-This is vanilla j.s course for biginner
+github에서 static website publish 방법
 
+1. 'gh-pages' branch 만들기 \*\*\*중요
+2. github repository에 들어가서 우측에 Environment - github-pages 들어가기
+3. view deployment 클릭
+4. url은 /https://eunhyung-lee.github.io/repository name/
+
+github free publish update 방법
+
+1. default branch에서 code 수정 \*\*\*중요
+
+This is vanilla j.s course for biginner
 variable.length : string 길이 구하기
 event.preventDefault() : Default event의 발생을 막는다
 `hello ${username}` : string 합치기
