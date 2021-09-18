@@ -14,6 +14,7 @@ function submitLoginForm(event){
 }
 loginForm.addEventListener("submit", submitLoginForm)
 
+
 function paintGreeting(userName){
     greeting.innerText = `Hello ${userName}`
     greeting.classList.remove(CLASSNAME_HIDDEN)
@@ -22,7 +23,7 @@ function paintGreeting(userName){
 const savedUserName = localStorage.getItem(USERNAME_KEY )
 if (savedUserName === null){
     loginForm.classList.remove(CLASSNAME_HIDDEN)
+    
 } else {
-    greeting.innerText = `Hello ${savedUserName}`
-    greeting.classList.remove(CLASSNAME_HIDDEN)
+    paintGreeting(savedUserName)
 }
