@@ -1,3 +1,57 @@
+@import "reset.css";
+
 .hidden {
   display: none;
+}
+body {
+  top: 0px;
+  left: 0px;
+  color: white;
+  font-family: "Rubik", sans-serif;
+}
+#background-image {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+main {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#greeting {
+  font-size: 50px;
+  margin-top: 20px;
+}
+#calender {
+  font-size: 80px;
+}
+#time {
+  font-size: 150px;
+}
+#weather {
+  display: flex;
+  position: absolute;
+  font-size: 20px;
+  top: 30px;
+  right: 100px;
+  justify-content: center;
+  align-items: center;
+}
+#weather img {
+  width: 60px;
+  height: 60px;
+  border: none;
+}
+#today-quote {
+  position: absolute;
+  bottom: 30px;
+  font-size: 20px;
+  font-weight: 600;
 }

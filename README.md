@@ -29,3 +29,6 @@ Math.floor(number) : 소수를 내림해서 반환
 document.creatElement("") : HTML element 생성
 document.body.appendChild() : HTML document에 element 추가
 document.body.prependChild() : HTML 중 맨 위에 element 추가
+navigator.geolocation.getCurrentPosition(success(position),false) : 위치를 보내주는 함수.
+weather API website : https://home.openweathermap.org/
+fetch(url) : url request

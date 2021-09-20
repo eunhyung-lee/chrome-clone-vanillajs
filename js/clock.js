@@ -1,4 +1,5 @@
-const clock = document.querySelector("h2#clock")
+const calender = document.querySelector("#calender")
+const time = document.querySelector("#time")
 
 function getClock(){
     const date = new Date()
@@ -9,8 +10,9 @@ function getClock(){
     const hour = String(date.getHours()).padStart(2,"0")
     const minute = String(date.getMinutes()).padStart(2,"0")
     const second = String(date.getSeconds()).padStart(2,"0")
-    clock.innerText = `${year}년 ${month+1}월 ${day}일 ${hour}시 ${minute}분 ${second}초`
+    calender.innerText = `${year}. ${month+1}. ${day}.`
+    time.innerText= `${hour} : ${minute} : ${second}`
 }
 
 getClock()
-setInterval(getClock, 1000)
+setInterval(getClock, 500)

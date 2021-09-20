@@ -13,17 +13,13 @@ function submitLoginForm(event){
     localStorage.setItem(USERNAME_KEY ,userName)
 }
 loginForm.addEventListener("submit", submitLoginForm)
-
-
 function paintGreeting(userName){
     greeting.innerText = `Hello ${userName}`
     greeting.classList.remove(CLASSNAME_HIDDEN)
 }
-
-const savedUserName = localStorage.getItem(USERNAME_KEY )
+const savedUserName = localStorage.getItem(USERNAME_KEY)
 if (savedUserName === null){
     loginForm.classList.remove(CLASSNAME_HIDDEN)
-    
 } else {
     paintGreeting(savedUserName)
 }
