@@ -32,3 +32,4 @@ document.body.prependChild() : HTML 중 맨 위에 element 추가
 navigator.geolocation.getCurrentPosition(success(position),false) : 위치를 보내주는 함수.
 weather API website : https://home.openweathermap.org/
 fetch(url) : url request
+update test
