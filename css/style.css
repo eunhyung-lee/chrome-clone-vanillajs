@@ -47,7 +47,6 @@ main {
 #weather img {
   width: 60px;
   height: 60px;
-  border: none;
 }
 #today-quote {
   position: absolute;
