@@ -27,7 +27,6 @@ function addStockHTML(name){
     stockLink.innerText = name 
     stockNews.appendChild(stockLink)
 }
-
 onStock.read()
 addStocks.addEventListener("submit",onStock.add)
 
