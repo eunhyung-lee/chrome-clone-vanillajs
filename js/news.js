@@ -9,8 +9,13 @@ const onStock = {
             stockCount = stockCount + 1
         }
     },
-
-    add : function(){
+    add : function(event){
+        event.preventDefault()
+        let i = 1
+        while(localStorage.getItem(`stock${i}`) !== null){
+            i = i + 1
+        }
+        localStorage.setItem(`stock${i}`,stockInput.value)
         addStockHTML(stockInput.value)
         stockInput.value = ""
     }
@@ -24,35 +29,5 @@ function addStockHTML(name){
 }
 
 onStock.read()
-addStocks.addEventListener("submit",submitAddStock)
+addStocks.addEventListener("submit",onStock.add)
 
-function submitAddStock(event){
-    event.preventDefault()
-    let i = 1
-    while(localStorage.getItem(`stock${i}`) !== null){
-        i = i + 1
-    }
-    localStorage.setItem(`stock${i}`,stockInput.value)
-    onStock.add()
-}
-
-
-
-
-
-// function addStockNews(){
-//     const stockName = stockInput.value
-//     const stockLink = document.createElement("a")
-//     stockLink.href = `https://search.naver.com/search.naver?where=news&query=${stockName}`
-//     stockLink.target = "_blank"
-//     stockLink.innerText = stockName 
-//     stockNews.appendChild(stockLink)
-//     stockInput.value = ""
-// }
-// function addStockNewstwo(count){
-//     const stockLink = document.createElement("a")
-//     stockLink.href = `https://search.naver.com/search.naver?where=news&query=${localStorage.getItem(`stock${count}`)}`
-//     stockLink.target = "_blank"
-//     stockLink.innerText = localStorage.getItem(`stock${count}`)
-//     stockNews.appendChild(stockLink)
-// }
