@@ -1,12 +1,13 @@
 #things-absolute-box {
-}
-
-#stock-news {
   position: absolute;
+  display: flex;
   top: 30px;
   left: 100px;
   font-weight: bolder;
-  /* width: 200px; */
+  /* box-sizing: border-box; */
+}
+#things-absolute-box div {
+  margin: 0px 10px 0px 10px;
 }
 
 #stock-news div:first-child {
@@ -17,11 +18,14 @@
 
 #stock-news a {
   margin-bottom: 10px;
+  font-size: 20px;
 }
 #stock-news p {
   font-size: 25px;
+  font-weight: bolder;
   margin-bottom: 10px;
 }
+
 #stock-add input {
   border: none;
   /* width: 200px; */

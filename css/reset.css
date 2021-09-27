@@ -51,7 +51,7 @@ dt,
 dd,
 ol,
 ul,
-li,
+/* li, */
 fieldset,
 form,
 label,
@@ -108,10 +108,10 @@ section {
 body {
   line-height: 1;
 }
-ol,
+/* ol,
 ul {
   list-style: none;
-}
+} */
 blockquote,
 q {
   quotes: none;
@@ -128,13 +128,7 @@ table {
   border-spacing: 0;
 }
 
-.login-form input {
-  outline: none;
-}
 a {
   text-decoration: none;
   color: inherit;
-}
-.main-screen {
-  padding: 0px 35px;
 }

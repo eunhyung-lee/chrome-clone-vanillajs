@@ -9,6 +9,7 @@
 
 main {
   font-family: "Rubik", sans-serif;
+  /* font-family: "Recursive", sans-serif; */
   color: white;
   display: flex;
   height: 100vh;

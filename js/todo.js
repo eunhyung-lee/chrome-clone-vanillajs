@@ -13,5 +13,5 @@ function addTodo(event){
 function addTodoList(todo){
     const addTodo = document.createElement("li")
     addTodo.innerText = todo
-    todoList.prepend(addTodo)
+    todoList.append(addTodo)
 }
