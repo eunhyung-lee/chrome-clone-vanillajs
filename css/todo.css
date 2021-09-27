@@ -7,8 +7,6 @@
   font-weight: bolder;
   text-align: center;
   margin-bottom: 10px;
-
-  /* border: 2px solid black; */
 }
 #todos li {
   margin-bottom: 10px;
@@ -25,9 +23,6 @@
   border: none;
   width: 200px;
   box-sizing: border-box;
-  /* padding: 0px; */
-
-  /* border: 2px solid black; */
 }
 #todo-input input::placeholder {
   color: white;
