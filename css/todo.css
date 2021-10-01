@@ -30,3 +30,14 @@
   font-weight: bolder;
   text-align: center;
 }
+.checked {
+  text-decoration: solid line-through black 3px;
+}
+li {
+  display: flex;
+  align-items: center;
+}
+li input {
+  width: 20px;
+  height: 20px;
+}

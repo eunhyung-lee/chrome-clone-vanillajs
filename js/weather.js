@@ -13,9 +13,7 @@ function onGeoOk(position){
         city.innerText = data.name
         weather.innerText = ` / ${data.weather[0].main} / ${data.main.temp}도`
         weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
-
     })
-    console.log("weather Get")
 }
 function onGeoError(){
     alert("Can't find where you are.")
