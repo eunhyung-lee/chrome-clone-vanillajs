@@ -9,7 +9,7 @@ let toDos = []
 todoForm.addEventListener("submit",addTodo)
 if(savedTodoList !== null){
     toDos = savedTodoList
-    savedTodoList.forEach(addTodoList)
+    toDos.forEach(addTodoList)
 }
 
 function addTodo(event){
@@ -18,7 +18,7 @@ function addTodo(event){
     todoInput.value=""
 }
 
-function saveTodo(todo,event){
+function saveTodo(todo){
     const toDoObj = {
         id: Date.now(),
         text: todo,
@@ -42,8 +42,15 @@ function deleteToDo(event){
 function checkboxAction(event){
     if(event.target.checked === true){
         event.target.parentElement.querySelector("span").classList.add(CHECKED)
+        
     } else {
         event.target.parentElement.querySelector("span").classList.remove(CHECKED)
+    }
+    for (i = 0; i < toDos.length; i++){
+        if(toDos[i].id === parseInt(event.target.parentElement.id)){
+            toDos[i].check = event.target.checked
+            localStorage.setItem(TODOS, JSON.stringify(toDos))
+        }    
     }
 }
 
@@ -56,7 +63,10 @@ function addTodoList(todo){
     deleteButton.innerText = "X"
     const checkButton = document.createElement("input")
     checkButton.type = "checkbox"
-    
+    if(todo.check === true){
+        checkButton.checked = true
+        span.classList.add(CHECKED)
+    }
     
     deleteButton.addEventListener("click",deleteToDo)
     checkButton.addEventListener("click",checkboxAction)
