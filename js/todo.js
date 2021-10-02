@@ -14,23 +14,30 @@ if(savedTodoList !== null){
 
 function addTodo(event){
     event.preventDefault()
-    addTodoList(todoInput.value) //그리고
-    saveTodo(todoInput.value) //저장
+    addTodoList(saveTodo(todoInput.value,event)) //저장, HTML 추가
     todoInput.value=""
 }
 
-function saveTodo(todo){
+function saveTodo(todo,event){
+    const toDoObj = {
+        id: Date.now(),
+        text: todo,
+        check:false
+    }
+    toDos.push(toDoObj)
     localStorage.setItem(TODOS, JSON.stringify(toDos))
-    toDos.push(todo)
+    return toDoObj
 }
 
 function deleteToDo(event){
     const clickedLi = event.target.parentElement
-    const clickedTodo = event.target.parentElement.querySelector("span").innerText
-    toDos.splice(toDos.indexOf(clickedTodo),1) ///
+    const clickedTodoId = event.target.parentElement.id
+    toDos = toDos.filter(item => item.id !== parseInt(clickedTodoId))//filter
+    // toDos.splice(toDos.indexOf(clickedTodo),1) ///
     localStorage.setItem(TODOS, JSON.stringify(toDos))
     clickedLi.remove()
 }
+
 
 function checkboxAction(event){
     if(event.target.checked === true){
@@ -43,7 +50,8 @@ function checkboxAction(event){
 function addTodoList(todo){
     const li = document.createElement("li")
     const span = document.createElement("span")
-    span.innerText = todo
+    span.innerText = todo.text
+    li.id=todo.id
     const deleteButton = document.createElement("button")
     deleteButton.innerText = "X"
     const checkButton = document.createElement("input")
