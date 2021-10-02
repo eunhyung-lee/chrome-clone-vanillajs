@@ -1,42 +1,34 @@
 const todoForm = document.querySelector("#todos")
 const todoInput = document.querySelector("#todos input")
 const todoList = document.querySelector("#todo-list")
-const CHECKED = "checked"
 const savedTodoList = JSON.parse(localStorage.getItem("toDos"))
-const toDos = []
+const CHECKED = "checked"
+const TODOS = "toDos"
+let toDos = []
 
 todoForm.addEventListener("submit",addTodo)
-loadingTodo()
-
-
-function loadingTodo(){
-    if(savedTodoList !== null){savedTodoList.forEach(addTodoList)}
-    // savedTodoList.forEach(addTodoList)
-}
-
-function saveTodo(todo){
-    if(savedTodoList === null){
-        toDos.push(todo)
-        localStorage.setItem("toDos", JSON.stringify(toDos))
-    } else {
-        savedTodoList.push(todo)
-        localStorage.setItem("toDos", JSON.stringify(savedTodoList))
-    }
+if(savedTodoList !== null){
+    toDos = savedTodoList
+    savedTodoList.forEach(addTodoList)
 }
 
 function addTodo(event){
     event.preventDefault()
-    addTodoList(todoInput.value)
-
-    saveTodo(todoInput.value)
+    addTodoList(todoInput.value) //그리고
+    saveTodo(todoInput.value) //저장
     todoInput.value=""
+}
+
+function saveTodo(todo){
+    localStorage.setItem(TODOS, JSON.stringify(toDos))
+    toDos.push(todo)
 }
 
 function deleteToDo(event){
     const clickedLi = event.target.parentElement
     const clickedTodo = event.target.parentElement.querySelector("span").innerText
-    savedTodoList.splice(savedTodoList.indexOf(clickedTodo),1) ///
-    localStorage.setItem("toDos", JSON.stringify(savedTodoList))
+    toDos.splice(toDos.indexOf(clickedTodo),1) ///
+    localStorage.setItem(TODOS, JSON.stringify(toDos))
     clickedLi.remove()
 }
 
