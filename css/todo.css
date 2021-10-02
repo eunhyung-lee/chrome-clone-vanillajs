@@ -32,6 +32,7 @@
 }
 .checked {
   text-decoration: solid line-through black 3px;
+  font-style: italic;
 }
 li {
   display: flex;
