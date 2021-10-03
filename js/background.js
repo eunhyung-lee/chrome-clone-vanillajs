@@ -11,8 +11,7 @@ const backgroundImages = [
 "10.jpg"
 ]
 const todayImage = backgroundImages[
-    // Math.floor(Math.random()*(backgroundImages.length))
-    5
+    Math.floor(Math.random()*(backgroundImages.length))
 ]
 
 // const body = document.querySelector("body")
