@@ -1,30 +1,45 @@
 /* todos */
-#todos {
-  width: 200px;
+#things-absolute-box {
+  position: absolute;
+  display: flex;
+  top: 30px;
+  left: 100px;
+  font-weight: bolder;
 }
-#todos p {
+#things-absolute-box > div {
+  margin: 10px;
+}
+#todos,
+#news {
+  width: 300px;
+}
+#todos p,
+#news p {
   font-size: 25px;
   font-weight: bolder;
   text-align: center;
   margin-bottom: 10px;
 }
-#todos li {
+#todos li,
+#news li {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
-  margin-left: 10px;
   font-size: 20px;
 }
-#todo-input input {
+#todo-input input,
+#stock-add input {
   background-color: transparent;
-  padding: 5px;
   color: white;
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
   border: none;
-  width: 200px;
-  box-sizing: border-box;
+  width: 300px;
+  padding: 0px;
 }
-#todo-input input::placeholder {
+#todo-input input::placeholder,
+#stock-add input::placeholder {
   color: white;
   font-size: 20px;
   font-weight: bolder;
@@ -33,12 +48,4 @@
 .checked {
   text-decoration: solid line-through black 3px;
   font-style: italic;
-}
-li {
-  display: flex;
-  align-items: center;
-}
-li input {
-  width: 20px;
-  height: 20px;
 }

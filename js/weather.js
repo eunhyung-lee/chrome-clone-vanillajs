@@ -22,4 +22,3 @@ function executeGeo(){
     navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError)
 }
 executeGeo()
-setInterval(executeGeo(), 3600000)

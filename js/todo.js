@@ -30,8 +30,8 @@ function saveTodo(todo){
 }
 
 function deleteToDo(event){
-    const clickedLi = event.target.parentElement
-    const clickedTodoId = event.target.parentElement.id
+    const clickedLi = event.path[2]
+    const clickedTodoId = event.path[2].id
     toDos = toDos.filter(item => item.id !== parseInt(clickedTodoId))//filter
     // toDos.splice(toDos.indexOf(clickedTodo),1) ///
     localStorage.setItem(TODOS, JSON.stringify(toDos))
@@ -41,13 +41,13 @@ function deleteToDo(event){
 
 function checkboxAction(event){
     if(event.target.checked === true){
-        event.target.parentElement.querySelector("span").classList.add(CHECKED)
+        event.path[2].querySelector("span").classList.add(CHECKED)
         
     } else {
-        event.target.parentElement.querySelector("span").classList.remove(CHECKED)
+        event.path[2].querySelector("span").classList.remove(CHECKED)
     }
     for (i = 0; i < toDos.length; i++){
-        if(toDos[i].id === parseInt(event.target.parentElement.id)){
+        if(toDos[i].id === parseInt(event.path[2].id)){
             toDos[i].check = event.target.checked
             localStorage.setItem(TODOS, JSON.stringify(toDos))
         }    
@@ -56,6 +56,8 @@ function checkboxAction(event){
 
 function addTodoList(todo){
     const li = document.createElement("li")
+    const textDiv = document.createElement("div")
+    const boxDiv = document.createElement("div")
     const span = document.createElement("span")
     span.innerText = todo.text
     li.id=todo.id
@@ -71,8 +73,11 @@ function addTodoList(todo){
     deleteButton.addEventListener("click",deleteToDo)
     checkButton.addEventListener("click",checkboxAction)
 
-    li.appendChild(span)
-    li.appendChild(checkButton)
-    li.appendChild(deleteButton)
+    textDiv.appendChild(span)
+    boxDiv.appendChild(checkButton)
+    boxDiv.appendChild(deleteButton)
+    li.appendChild(textDiv)
+    li.appendChild(boxDiv)
+
     todoList.append(li)
 }

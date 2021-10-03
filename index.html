@@ -38,24 +38,34 @@
 
       <div id="things-absolute-box">
         <!-- css : stock.css -->
-        <div id="stock-news">
+        <div id="news">
           <div>
             <p>Stocks News</p>
-            <!-- stock news 입력 시 여기 추가 -->
           </div>
+          <!-- stock news 입력 시 여기 추가 -->
           <div>
+            <ul id="news-list"></ul>
             <form id="stock-add">
-              <input type="text" placeholder="stock add" />
+              <input type="text" placeholder="stock add" required />
             </form>
           </div>
         </div>
 
         <div id="todos">
-          <p>Todo-List</p>
-          <ul id="todo-list"></ul>
-          <form id="todo-input">
-            <input type="text" placeholder="New To Do" required />
-          </form>
+          <div>
+            <p>Todo-List</p>
+          </div>
+          <div>
+            <ul id="todo-list"></ul>
+            <form id="todo-input">
+              <input
+                type="text"
+                placeholder="New To Do"
+                required
+                maxlength="10"
+              />
+            </form>
+          </div>
         </div>
       </div>
     </main>
