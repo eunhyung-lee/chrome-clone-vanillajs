@@ -12,7 +12,7 @@ const backgroundImages = [
 ]
 const todayImage = backgroundImages[
     // Math.floor(Math.random()*(backgroundImages.length))
-    7
+    6
 ]
 
 // const body = document.querySelector("body")
