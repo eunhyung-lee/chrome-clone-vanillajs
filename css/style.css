@@ -17,3 +17,8 @@ main {
   align-items: center;
   justify-content: center;
 }
+#finance-anchor {
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
