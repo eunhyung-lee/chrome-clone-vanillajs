@@ -6,8 +6,9 @@
 @import "stock.css";
 @import "todoandstock.css";
 @import "weather.css";
+@import "finance.css";
 
-main {
+#momentum-main {
   font-family: "Rubik", sans-serif;
   /* font-family: "Recursive", sans-serif; */
   color: white;
