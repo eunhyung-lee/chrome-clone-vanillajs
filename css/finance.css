@@ -1,5 +1,10 @@
+#finance-main {
+  padding: 20px;
+  width: 100vw;
+}
 .piechart {
-  width: 400px;
+  width: 500px;
+  height: 400px;
 }
 #chart-box {
   display: flex;
@@ -7,6 +12,7 @@
   width: 100vw;
 }
 
-#investment-income-graph {
-  width: 800px;
+#investment-income-graph,
+#total-asset-graph {
+  width: 1000px;
 }

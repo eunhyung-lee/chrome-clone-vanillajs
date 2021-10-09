@@ -4,11 +4,11 @@ google.charts.load("current", { packages: ["corechart", "table"] });
 google.charts.setOnLoadCallback(drawStockComposition);
 google.charts.setOnLoadCallback(drawAssetComposition);
 google.charts.setOnLoadCallback(drawInvestmentIncome);
+google.charts.setOnLoadCallback(drawTotalAsset);
 
 let stockData; // 주식 구성 변수
 let stockOptions;
 let stockChart;
-
 function drawStockComposition() {
   stockData = new google.visualization.DataTable();
   stockData.addColumn("string", "stock");
@@ -32,7 +32,6 @@ function drawStockComposition() {
 let assetData; // 자산 구성 변수
 let assetOptions;
 let assetChart;
-
 function drawAssetComposition() {
   assetData = new google.visualization.DataTable();
   assetData.addColumn("string", "item");
@@ -55,7 +54,6 @@ function drawAssetComposition() {
 let investmentIncomeData;
 let investmentIncomeOptions;
 let investmentIncomeChart;
-
 function drawInvestmentIncome() {
   investmentIncomeData = new google.visualization.DataTable();
   investmentIncomeData.addColumn("string", "date");
@@ -64,6 +62,7 @@ function drawInvestmentIncome() {
   investmentIncomeData.addRow(["10/03", 4226655]);
   investmentIncomeData.addRow(["10/10", 4467757]);
   investmentIncomeOptions = {
+    title: "Total Investment Income",
     hAxis: {
       title: "Date",
       titleTextStyle: {
@@ -89,10 +88,58 @@ function drawInvestmentIncome() {
       color: "black",
       trigger: "selection",
     },
+    legend: { position: "bottom" },
   };
   investmentIncomeChart = new google.visualization.LineChart(
     document.getElementById("investment-income-graph")
   );
   investmentIncomeChart.draw(investmentIncomeData, investmentIncomeOptions);
   // investmentIncomeChart.setSelection([{ row: 0, column: 1 }]);
+}
+
+let totalAssetData;
+let totalAssetOptions;
+let totalAssetChart;
+function drawTotalAsset() {
+  totalAssetData = new google.visualization.DataTable();
+  totalAssetData.addColumn("string", "date");
+  totalAssetData.addColumn("number", "Net Capital");
+  totalAssetData.addColumn("number", "Total Dept");
+  totalAssetData.addRow(["9/26", 43376120, 19000000]);
+  totalAssetData.addRow(["10/03", 41651751, 29000000]);
+  totalAssetData.addRow(["10/10", 41892853, 28000000]);
+  totalAssetOptions = {
+    title: "Total Asset",
+    isStacked: "absolute",
+    hAxis: {
+      title: "Date",
+      titleTextStyle: {
+        // color: '#01579b',
+        // fontSize: 20,
+        // fontName: 'Arial',
+        bold: true,
+        italic: false,
+      },
+    },
+    vAxis: {
+      title: "Tot Asset",
+      minValue: 0,
+      titleTextStyle: {
+        // color: '#01579b',
+        // fontSize: 20,
+        // fontName: 'Arial',
+        bold: true,
+        italic: false,
+      },
+    },
+    crosshair: {
+      color: "black",
+      trigger: "selection",
+    },
+    legend: { position: "bottom" },
+  };
+  totalAssetChart = new google.visualization.AreaChart(
+    document.getElementById("total-asset-graph")
+  );
+  totalAssetChart.draw(totalAssetData, totalAssetOptions);
 }
