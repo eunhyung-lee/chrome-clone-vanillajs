@@ -1,0 +1,12 @@
+.piechart {
+  width: 400px;
+}
+#chart-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+#investment-income-graph {
+  width: 800px;
+}
