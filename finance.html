@@ -16,10 +16,18 @@
         <div id="asset-chart" class="piechart"></div>
       </div>
       <div>
-        <div id="investment-income-graph"></div>
-        <div id="total-asset-graph"></div>
+        <div id="investment-income-graph" class="graphchart"></div>
+        <div id="total-asset-graph" class="graphchart"></div>
       </div>
     </main>
+
     <script src="js/financeCharts.js"></script>
+    <script
+      async
+      defer
+      src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()"
+    ></script>
   </body>
 </html>
