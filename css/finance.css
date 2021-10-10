@@ -1,6 +1,7 @@
 #finance-main {
   padding: 20px;
-  width: 100vw;
+  width: 80vw;
+  border: 1px solid black;
 }
 .piechart {
   width: 500px;
@@ -12,7 +13,7 @@
   width: 100vw;
 }
 
-#investment-income-graph,
-#total-asset-graph {
+.graphchart {
   width: 1000px;
+  margin-bottom: 20px;
 }

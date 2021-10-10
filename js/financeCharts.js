@@ -63,8 +63,9 @@ function drawInvestmentIncome() {
   investmentIncomeData.addRow(["10/10", 4467757]);
   investmentIncomeOptions = {
     title: "Total Investment Income",
+    pointSize: 10,
     hAxis: {
-      title: "Date",
+      // title: "Date",
       titleTextStyle: {
         // color: '#01579b',
         // fontSize: 20,
@@ -74,7 +75,7 @@ function drawInvestmentIncome() {
       },
     },
     vAxis: {
-      title: "Tot Investment Income",
+      title: "Total Investment Income",
       titleTextStyle: {
         // color: '#01579b',
         // fontSize: 20,
@@ -86,10 +87,11 @@ function drawInvestmentIncome() {
     // colors: ["#a52714", "#097138"],
     crosshair: {
       color: "black",
-      trigger: "selection",
+      trigger: "both",
     },
     legend: { position: "bottom" },
   };
+
   investmentIncomeChart = new google.visualization.LineChart(
     document.getElementById("investment-income-graph")
   );
@@ -105,14 +107,22 @@ function drawTotalAsset() {
   totalAssetData.addColumn("string", "date");
   totalAssetData.addColumn("number", "Net Capital");
   totalAssetData.addColumn("number", "Total Dept");
+  totalAssetData.addRow(["8/21", 34525169, 20000000]);
+  totalAssetData.addRow(["8/29", 39511198, 20000000]);
+  totalAssetData.addRow(["9/5", 40557401, 13000000]);
+  totalAssetData.addRow(["9/12", 40077412, 17000000]);
+  totalAssetData.addRow(["9/19", 40492503, 17000000]);
   totalAssetData.addRow(["9/26", 43376120, 19000000]);
   totalAssetData.addRow(["10/03", 41651751, 29000000]);
   totalAssetData.addRow(["10/10", 41892853, 28000000]);
+
   totalAssetOptions = {
     title: "Total Asset",
-    isStacked: "absolute",
+    isStacked: true,
+    pointSize: 10,
+    // axisTitlesPosition: "in",
     hAxis: {
-      title: "Date",
+      // title: "Date",
       titleTextStyle: {
         // color: '#01579b',
         // fontSize: 20,
@@ -122,8 +132,7 @@ function drawTotalAsset() {
       },
     },
     vAxis: {
-      title: "Tot Asset",
-      minValue: 0,
+      title: "Total Asset",
       titleTextStyle: {
         // color: '#01579b',
         // fontSize: 20,
@@ -134,7 +143,7 @@ function drawTotalAsset() {
     },
     crosshair: {
       color: "black",
-      trigger: "selection",
+      trigger: "both",
     },
     legend: { position: "bottom" },
   };
